@@ -1,11 +1,10 @@
 import Header from './Header'
+import ItemListContainer from './components/ItemListContainer';
 function App() {
   return (
     <>
     <Header />
-    <main>
-      <h2>Hola</h2>
-    </main>
+    <ItemListContainer greeting="greeting"/>
     </>
   );
 }
