@@ -18,6 +18,12 @@ function ItemListContainer (greeting) {
         .then(res=>{
             setData(res)
         })
+
+        if(resultado.id){
+            console.log("Estoy en la ruta de categorias" + resultado.id)
+        } else {
+            console.log("Estoy en el home")
+        }
     },[]) 
     
     //acciones
