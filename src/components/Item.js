@@ -10,7 +10,7 @@ function Item(props) {
                     <article key={i} className="card"> 
                     <h2>{item.title} - ${item.price}</h2>
                     <img src={item.image} alt= {item.title}/>
-                    <Link className="btn-camisetas btn btn-primary btn-sm" to="/item/id" >Ver detalles</Link>
+                    <Link className="btn-camisetas btn btn-primary btn-sm" to={`/item/${item.id}`} >Ver detalles</Link>
                     </article>
                 )
             })}
