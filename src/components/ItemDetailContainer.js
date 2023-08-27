@@ -26,7 +26,7 @@ function ItemDetailContainer () {
         const pedido = new Promise((res, rej) => {
             setTimeout(() => {
                 res(productosId)
-            }, 2000)
+            }, 500)
         })
         return pedido
     }
