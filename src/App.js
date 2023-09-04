@@ -1,12 +1,15 @@
 import { BrowserRouter } from 'react-router-dom';
 import Header from './Header'
 import Main from './Main';
+import CustomProvider from './components/Context';
 
 function App() {
   return (
     <BrowserRouter>
-       <Header />
-       <Main />
+      <CustomProvider>
+        <Header />
+        <Main />
+       </CustomProvider>
     </BrowserRouter>
   );
 }
