@@ -1,11 +1,15 @@
 import { createContext } from "react"
 
+export const context = createContext()
+    const Provider = context.Provider
 const CustomProvider = (props) => {
-    
-    const contexto = createContext()
-    const Provider = contexto.Provider
+    const valorContexto = {
+        carrito: [],
+        montoTotal: 0,
+        cantidadTotal: 10,
+    }
     return(
-        <Provider value={{}}>
+        <Provider value={valorContexto}>
             {props.children}
         </Provider>
     )
