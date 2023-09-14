@@ -14,6 +14,11 @@ const CustomProvider = (props) => {
         .then((res)=>{
             setCantidadTotal(res)
         })
+
+        getPrice()
+        .then((res)=>{
+            setMontoTotal(res)
+        })
     })
 
     const addItem = (item, quantity) => {
@@ -28,15 +33,25 @@ const CustomProvider = (props) => {
         return cart.some(prod => prod.title === itemTitle)
     }
 
-    const total = cart.reduce((accumulator, actual)=> accumulator + actual.quantity, 0) 
+    const totalCart = cart.reduce((accumulator, actual)=> accumulator + actual.quantity, 0) 
     
     const getTotal = () =>{
         const pedido = new Promise((res,rej) => {
             setTimeout(()=>{
-                res(total)
+                res(totalCart)
             },500)
         })
+        return pedido
+    }
 
+    const totalPrice = cart.reduce((accumulator, actual) => accumulator + (actual.price * actual.quantity), 0)
+
+    const getPrice = () =>{
+        const pedido = new Promise((res,rej) => {
+            setTimeout(()=>{
+                res(totalPrice)
+            }, 500)
+        })
 
         return pedido
     }

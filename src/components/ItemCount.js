@@ -25,7 +25,8 @@ function ItemCount (producto) {
         const quantity = contador
         const title = producto.title
         const price = producto.price
-        const item = {title, price}
+        const image = producto.image
+        const item = {title, price, image}
 
 
         addItem(item, quantity)
@@ -33,10 +34,10 @@ function ItemCount (producto) {
 
     return(
         <div className="contador">
-            <button disabled={contador >= 20} className="btn-camisetas btn btn-primary btn-sm" onClick={aumentar}>+</button>
-            <span>{contador}</span>
-            <button disabled={contador <= 0} className="btn-camisetas btn btn-primary btn-sm" onClick={disminuir}>-</button>
-            <button disabled={contador <=0} className="btn-camisetas btn btn-primary btn-sm" onClick={añadirCarrito}>Agregar al carrito</button>
+            <button disabled={contador >= 20} className="btn-camisetas btn btn-dark btn-sm" onClick={aumentar}>+</button>
+            <span className="p-2 fs-5">{contador}</span>
+            <button disabled={contador <= 0} className="btn-camisetas btn btn-dark btn-sm" onClick={disminuir}>-</button>
+            <button disabled={contador <=0} className="ms-2 btn-camisetas btn btn-dark btn-sm" onClick={añadirCarrito}>Agregar al carrito</button>
         </div>
     )
 }
