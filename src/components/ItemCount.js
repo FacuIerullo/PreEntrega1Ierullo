@@ -6,21 +6,11 @@ import { context } from "./Context"
 function ItemCount (producto) {
 
     const [contador, setContador] = useState(0)
+    const [totalQuantity, setTotalQuantity] = useState(0)
 
-    const [data, setData] = useState()
+    const { cart } = useContext(context)
 
-    const props =  useContext(context)
-
-    useEffect(()=>{
-        getData(setData)
-    },[data])
-
-    const getData = () => {
-        setTimeout(()=>{
-            let data = producto
-            setData(data)
-        }, 3000)
-    }
+    const { addItem } =  useContext(context)
 
     const disminuir = () => {
         setContador(contador - 1)
@@ -31,10 +21,15 @@ function ItemCount (producto) {
     }
 
     const añadirCarrito = () => {
-        props.carrito.push([{"title": data.title, "price": data.price, "quantity": contador}])
-        console.log(props.carrito)
-    }
 
+        const quantity = contador
+        const title = producto.title
+        const price = producto.price
+        const item = {title, price}
+
+
+        addItem(item, quantity)
+    }
 
     return(
         <div className="contador">

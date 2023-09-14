@@ -4,12 +4,12 @@ import { context } from "./Context"
 
 function CartWidget(){
 
-    const valorContexto = useContext(context)
+    const { cantidadTotal } = useContext(context)
 
     return(
         <NavLink to="/carrito">
             <i className="material-icons">shopping_cart</i>
-            <span>{valorContexto.cantidadTotal}</span>
+            <span>{cantidadTotal}</span>
         </NavLink>
     )
 }

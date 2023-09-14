@@ -3,10 +3,21 @@ import { context } from "./Context"
 
 function Carrito () {
 
-    const props =  useContext(context)
+    const { cart } =  useContext(context)
+     
     
     return(
-        console.log(props.carrito)
+       cart.map((item, i)=>{
+        return (
+            <article key={i}>
+                <div>{item.title}</div>
+                <span>${item.price}</span>
+                <div>
+                <span>{item.quantity}</span>
+                </div>
+            </article>
+        )
+       })
     )
 
 }
