@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 function Cart () {
 
-    const { cart, montoTotal, removeItem, clearCart} =  useContext(context)
+    const { cart, montoTotal, clearCart} =  useContext(context)
 
         
     return(
@@ -15,8 +15,7 @@ function Cart () {
                 <img className="imagen" src={item.image} alt={item.title} />
                 <h2 className="titulo">{item.title}</h2>
                 <span className="precio">precio: ${item.price}</span>
-                <span className="cantidad">cantidad: {item.quantity}</span>
-                <button onClick={removeItem} className="boton btn-camisetas btn btn-dark btn-sm">X</button>   
+                <span className="cantidad">cantidad: {item.quantity}</span>   
             </article>
         )
        })}

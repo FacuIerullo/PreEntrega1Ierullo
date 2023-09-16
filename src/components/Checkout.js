@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom"
+import { context } from "./Context"
+import { useContext } from "react"
+
 
 function Checkout () {
+
+  const { clearCart } = useContext(context)
+
  return(
     <>
     <form class="row g-3 needs-validation" novalidate>
@@ -60,7 +66,7 @@ function Checkout () {
     </div>
   </div>
   <div class="col-12">
-    <Link to={"/compraconfirmada"} class="btn btn-dark" type="submit">Enviar</Link>
+    <Link onClick={clearCart} to={"/compraconfirmada"} class="btn btn-dark" type="submit">Enviar</Link>
   </div>
 </form>
     </>
