@@ -5,7 +5,7 @@ function NavBar(){
     return(
       <nav className="navbar bg-dark" data-bs-theme="dark">
       <div className="container-fluid">
-        <Link to="/" className="navbar-brand">Tienda</Link>
+        <Link to="/" className="navbar-brand">Clothes Store</Link>
 
         <div>
           <NavLink to="/category/remeras" className="btn-camisetas btn btn-dark btn-sm">Remeras</NavLink>

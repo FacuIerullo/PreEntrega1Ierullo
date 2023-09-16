@@ -5,6 +5,7 @@ import { db } from "../db/firebase"
 import { collection, getDoc, doc } from "firebase/firestore"
 
 
+
 function ItemDetailContainer () {
     const [producto, setProducto] = useState()
     const itemId = useParams()

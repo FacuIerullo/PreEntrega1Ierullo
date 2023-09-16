@@ -62,8 +62,17 @@ const CustomProvider = (props) => {
         montoTotal: montoTotal,
     }
 
+    const removeItem = (itemTitle) => {
+        const cartUpdated = cart.filter(prod => prod.title !== itemTitle)
+        setCart(cartUpdated)
+    }
+
+    const clearCart = () => {
+        setCart([])
+    }
+
     return(
-        <Provider value={{valorContexto, addItem, cart, cantidadTotal, montoTotal}}>
+        <Provider value={{valorContexto, addItem, cart, cantidadTotal, montoTotal, removeItem, clearCart}}>
             {props.children}
         </Provider>
     )

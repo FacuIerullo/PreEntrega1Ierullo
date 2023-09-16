@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 import { context } from "./Context"
 
 
@@ -6,9 +6,6 @@ import { context } from "./Context"
 function ItemCount (producto) {
 
     const [contador, setContador] = useState(0)
-    const [totalQuantity, setTotalQuantity] = useState(0)
-
-    const { cart } = useContext(context)
 
     const { addItem } =  useContext(context)
 
